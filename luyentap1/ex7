@@ -1,0 +1,5 @@
+Bài 7: Khởi tạo
+s1 = Student("A", 10)
+s2 = Student("B", 8.5)
+s1.display()
+s2.display()
