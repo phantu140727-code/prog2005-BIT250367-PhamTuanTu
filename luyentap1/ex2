@@ -1,0 +1,5 @@
+Bài 2
+x = float(input("Nhập số thứ nhất: "))
+y = float(input("Nhập số thứ hai: "))
+print(f"Lũy thừa: {x**y}, Căn bậc 2 x: {math.sqrt(abs(x))}")
+print(f"Chia nguyên: {x//y}, Chia dư: {x%y}, Làm tròn: {round(x/y, 2)}")
