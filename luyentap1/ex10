@@ -1,0 +1,8 @@
+code = input("Mã SP: ")
+name = input("Tên SP: ")
+price = input("Giá: ")
+
+# Ghi đè (append) vào file
+with open("products.txt", "a", encoding="utf-8") as f:
+    f.write(f"{code};{name};{price}\n")
+print("Đã lưu thành công!")
