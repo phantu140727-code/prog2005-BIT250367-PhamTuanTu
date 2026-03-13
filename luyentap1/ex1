@@ -1,0 +1,5 @@
+a=10
+b=4
+def tinh_gia_tri_bieu_thuc:
+    return (a**2+b**2)/(a-b)
+print(tinh_gia_tri_bieu_thuc())
