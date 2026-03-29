@@ -1,0 +1,5 @@
+s = input("Nhập một chuỗi: ")
+if not s:
+    print("Lỗi: Bạn chưa nhập chuỗi nào!")
+else:
+    print(f"Độ dài của chuỗi là: {len(s)}")
