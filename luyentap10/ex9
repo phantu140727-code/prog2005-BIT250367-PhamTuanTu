@@ -1,0 +1,56 @@
+class SanPham:
+    def __init__(self, ten):
+        self._ten = ten # Thuộc tính protected
+
+    @property
+    def ten(self): return self._ten
+
+    @ten.setter
+    def ten(self, value):
+        if not value: raise ValueError("Tên không được để trống")
+        self._ten = value
+
+    def __str__(self):
+        return f"Sản phẩm: {self._ten}"
+
+    @staticmethod
+    def thong_bao():
+        return "Đây là lớp cha SanPham"
+
+class DienThoai(SanPham):
+    def __init__(self, ten, gia):
+        super().__init__(ten)
+        # Cách 1 xác thực: ValueError trực tiếp
+        if gia < 0: raise ValueError("Giá không được âm")
+        self._gia = gia
+
+    @property
+    def gia(self): return self._gia
+
+    @gia.setter
+    def gia(self, value):
+        # Cách 2 xác thực: Dùng điều kiện kiểm tra
+        if not isinstance(value, (int, float)):
+            raise ValueError("Giá phải là số")
+        self._gia = value
+
+    def display(self): # Phương thức đối tượng
+        return f"{self._ten} có giá {self._gia}"
+
+    @classmethod
+    def info_lop(cls): # Phương thức lớp
+        return "Lớp Điện Thoại kế thừa từ Sản Phẩm"
+
+    def __eq__(self, other): # Nạp chồng toán tử ==
+        return self._gia == other._gia
+
+    def __str__(self):
+        return f"DT: {self._ten}, Gia: {self._gia}"
+
+dt1 = DienThoai("Iphone", 1000)
+dt2 = DienThoai("Samsung", 1000)
+print(dt1)
+print(dt1.display())
+print(DienThoai.info_lop())
+print(DienThoai.thong_bao())
+print(f"So sánh giá: {dt1 == dt2}")
