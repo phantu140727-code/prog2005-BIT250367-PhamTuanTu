@@ -1,0 +1,7 @@
+mat_khau_dung = "phantu"
+while True:
+    nhap = input("Nhập mật khẩu: ")
+    if nhap == mat_khau_dung:
+        print("Đúng rồi!")
+        break
+    print("Sai rồi, mời nhập lại.")
